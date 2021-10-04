@@ -1,2 +1,3 @@
 # cmms-oxo
-Full stack CMMS - Computer Maintenance Management System use Express - React
+
+Full stack CMMS - Computerized Maintenance Management System use Express - React
