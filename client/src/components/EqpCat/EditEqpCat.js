@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { FaPenFancy, FaWindowClose} from "react-icons/fa";
 
 const EditEqpCat = ({ eqpCat }) => {
   const [category, setCategory] = useState(eqpCat.category);
@@ -31,7 +32,7 @@ const EditEqpCat = ({ eqpCat }) => {
         data-toggle="modal"
         data-target={`#id${eqpCat.id}`}
       >
-        Edit
+        <FaPenFancy />
       </button>
 
       {/* 
@@ -72,7 +73,7 @@ const EditEqpCat = ({ eqpCat }) => {
                 data-dismiss="modal"
                 onClick={e => updateCategory(e)}
               >
-                Edit
+                <FaPenFancy />
               </button>
               <button
                 type="button"
@@ -80,7 +81,7 @@ const EditEqpCat = ({ eqpCat }) => {
                 data-dismiss="modal"
                 onClick={() => setCategory(eqpCat.category)}
               >
-                Close
+                <FaWindowClose />
               </button>
             </div>
           </div>

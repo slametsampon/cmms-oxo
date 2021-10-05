@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import EditEqpCat from "./EditEqpCat";
+import { FaTrashAlt} from "react-icons/fa";
 
 const ListEqpCats = () => {
   const [eqpCats, setEqpCats] = useState([]);
@@ -64,7 +65,7 @@ const ListEqpCats = () => {
                   className="btn btn-danger"
                   onClick={() => deleteEqpCat(eqpCat.id)}
                 >
-                  Delete
+                  <FaTrashAlt />
                 </button>
               </td>
             </tr>
