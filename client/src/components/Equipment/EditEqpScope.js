@@ -1,16 +1,16 @@
 import React, { Fragment, useState } from "react";
 import { FaPenFancy, FaWindowClose} from "react-icons/fa";
 
-const EditEqpCat = ({ eqpCat }) => {
-  const [category, setCategory] = useState(eqpCat.category);
+const EditEqpScope = ({ eqpScope }) => {
+  const [scope, setScope] = useState(eqpScope.scope);
 
-  //edit category function
-  const updateCategory = async e => {
+  //edit scope function
+  const updateScope = async e => {
     e.preventDefault();
     try {
-      const body = { category };
+      const body = { eqpScope };
       const response = await fetch(
-        `http://localhost:5000/eqpCat/${eqpCat.id}`,
+        `http://localhost:5000/eqpScope/${eqpScope.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -30,7 +30,7 @@ const EditEqpCat = ({ eqpCat }) => {
         type="button"
         class="btn btn-warning"
         data-toggle="modal"
-        data-target={`#id${eqpCat.id}`}
+        data-target={`#id${eqpScope.id}`}
       >
         <FaPenFancy />
       </button>
@@ -40,18 +40,18 @@ const EditEqpCat = ({ eqpCat }) => {
       */}
       <div
         class="modal"
-        id={`id${eqpCat.id}`}
-        onClick={() => setCategory(eqpCat.category)}
+        id={`id${eqpScope.id}`}
+        onClick={() => setScope(eqpScope.scope)}
       >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Edit EqpCat</h4>
+              <h4 class="modal-title">Edit EqpScope</h4>
               <button
                 type="button"
                 class="close"
                 data-dismiss="modal"
-                onClick={() => setCategory(eqpCat.category)}
+                onClick={() => setScope(eqpScope.scope)}
               >
                 &times;
               </button>
@@ -61,8 +61,8 @@ const EditEqpCat = ({ eqpCat }) => {
               <input
                 type="text"
                 className="form-control"
-                value={category}
-                onChange={e => setCategory(e.target.value)}
+                value={scope}
+                onChange={e => setScope(e.target.value)}
               />
             </div>
 
@@ -71,7 +71,7 @@ const EditEqpCat = ({ eqpCat }) => {
                 type="button"
                 class="btn btn-warning"
                 data-dismiss="modal"
-                onClick={e => updateCategory(e)}
+                onClick={e => updateScope(e)}
               >
                 <FaPenFancy />
               </button>
@@ -79,7 +79,7 @@ const EditEqpCat = ({ eqpCat }) => {
                 type="button"
                 class="btn btn-danger"
                 data-dismiss="modal"
-                onClick={() => setCategory(eqpCat.category)}
+                onClick={() => setScope(eqpScope.scope)}
               >
                 <FaWindowClose />
               </button>
@@ -91,4 +91,4 @@ const EditEqpCat = ({ eqpCat }) => {
   );
 };
 
-export default EditEqpCat;
+export default EditEqpScope;

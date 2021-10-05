@@ -12,6 +12,7 @@ export default function TopNavigation() {
                         <Nav.Link href="#workOrder">Work Order</Nav.Link>
                         <Nav.Link href="#PM & PdM">PM & PdM</Nav.Link>
                         <Nav.Link href="#config">Configuration</Nav.Link>
+                        <Nav.Link href="#reporting">Reporting</Nav.Link>
                         <Nav.Link href="#help">Help</Nav.Link>
                         <Nav.Link href="#about">About</Nav.Link>
                     </Nav>

@@ -2,11 +2,11 @@ import React, { Fragment } from "react";
 import "./App.css";
 
 //components
-
-import ListEqpCats from "./components/EqpCat/ListEqpCats";
-import InputEqpCat from "./components/EqpCat/InputEqpCat";
 import TopNavigation from "./components/layout/TopNavigation";
 import ConfigNav from "./components/layout/ConfigNav";
+
+//Equipment
+import Equipment from "./components/Equipment/Equipment";
 
 function App() {
   return (
@@ -14,8 +14,7 @@ function App() {
       <div className="container">
         <TopNavigation />
         <ConfigNav />
-        <InputEqpCat />
-        <ListEqpCats />
+        <Equipment />
       </div>
     </Fragment>
   );

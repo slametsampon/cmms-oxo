@@ -1,41 +1,41 @@
 import React, { Fragment, useEffect, useState } from "react";
-import EditEqpCat from "./EditEqpCat";
+import EditEqpScopes from "./EditEqpScope";
 import { FaTrashAlt} from "react-icons/fa";
 
-const ListEqpCats = () => {
-  const [eqpCats, setEqpCats] = useState([]);
+const ListEqpScopes = () => {
+  const [eqpScopes, setEqpScopes] = useState([]);
 
   
-    //delete eqpCat function
-  const deleteEqpCat = async id => {
+    //delete eqpScope function
+  const deleteScope = async id => {
     try {
-      const deleteEqpCat = await fetch(`http://localhost:5000/eqpCats/${id}`, {
+      const deleteScope = await fetch(`http://localhost:5000/eqpScopes/${id}`, {
         method: "DELETE"
       });
 
-      setEqpCats(eqpCats.filter(eqpCat => eqpCat.id !== id));
+      setEqpScopes(eqpScopes.filter(eqpScope => eqpScope.id !== id));
     } catch (err) {
       console.error(err.message);
     }
   };
 
-  //get list EqpCats
-  const getEqpCats = async () => {
+  //get list Scopes
+  const getScopes = async () => {
     try {
-      const response = await fetch("http://localhost:5000/eqpCats");
+      const response = await fetch("http://localhost:5000/eqpScopes");
       const jsonData = await response.json();
 
-      setEqpCats(jsonData);
+      setEqpScopes(jsonData);
     } catch (err) {
       console.error(err.message);
     }
   };
 
   useEffect(() => {
-    getEqpCats();
+    getScopes();
   }, []);
 
-  console.log(eqpCats);
+  console.log(eqpScopes);
 
   return (
     <Fragment>
@@ -54,16 +54,16 @@ const ListEqpCats = () => {
             <td>Doe</td>
             <td>john@example.com</td>
           </tr> */}
-          {eqpCats.map(eqpCat => (
-            <tr key={eqpCat.id}>
-              <td>{eqpCat.category}</td>
+          {eqpScopes.map(eqpScope => (
+            <tr key={eqpScope.id}>
+              <td>{eqpScope.scope}</td>
               <td>
-                <EditEqpCat eqpCat={eqpCat} />
+                <EditEqpScopes eqpScope={eqpScope} />
               </td>
               <td>
                 <button
                   className="btn btn-danger"
-                  onClick={() => deleteEqpCat(eqpCat.id)}
+                  onClick={() => deleteScope(eqpScope.id)}
                 >
                   <FaTrashAlt />
                 </button>
@@ -76,4 +76,4 @@ const ListEqpCats = () => {
   );
 };
 
-export default ListEqpCats;
+export default ListEqpScopes;

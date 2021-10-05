@@ -8,7 +8,8 @@ const cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var eqpCatRouter = require('./routes/eqpCats');
+//var eqpCatRouter = require('./routes/eqpCats');
+var eqpScopeRouter = require('./routes/eqpScopes');
 
 var app = express();
 
@@ -22,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/eqpCats', eqpCatRouter);
+app.use('/eqpScopes', eqpScopeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
