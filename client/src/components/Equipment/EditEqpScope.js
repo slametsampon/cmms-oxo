@@ -10,7 +10,7 @@ const EditEqpScope = ({ eqpScope }) => {
     try {
       const body = { eqpScope };
       const response = await fetch(
-        `http://localhost:5000/eqpScope/${eqpScope.id}`,
+        `http://localhost:5000/eqpScopes/${eqpScope.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
