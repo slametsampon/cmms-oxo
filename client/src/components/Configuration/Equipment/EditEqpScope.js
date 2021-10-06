@@ -1,5 +1,9 @@
 import React, { Fragment, useState } from "react";
-import { FaPenFancy, FaWindowClose} from "react-icons/fa";
+import {
+  FaPenFancy,
+  FaWindowClose,
+  FaSave
+} from "react-icons/fa";
 
 const EditEqpScope = ({ eqpScope }) => {
   const [scope, setScope] = useState(eqpScope.scope);
@@ -8,7 +12,7 @@ const EditEqpScope = ({ eqpScope }) => {
   const updateScope = async e => {
     e.preventDefault();
     try {
-      const body = { eqpScope };
+      const body = { scope };
       const response = await fetch(
         `http://localhost:5000/eqpScopes/${eqpScope.id}`,
         {
@@ -73,7 +77,7 @@ const EditEqpScope = ({ eqpScope }) => {
                 data-dismiss="modal"
                 onClick={e => updateScope(e)}
               >
-                <FaPenFancy />
+                <FaSave />
               </button>
               <button
                 type="button"

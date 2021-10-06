@@ -2,19 +2,14 @@ import React, { Fragment } from "react";
 import "./App.css";
 
 //components
-import TopNavigation from "./components/layout/TopNavigation";
-import ConfigNav from "./components/layout/ConfigNav";
-
-//Equipment
-import Equipment from "./components/Equipment/Equipment";
+import CmmsNavigation from "./components/layout/CmmsNavigation";
 
 function App() {
   return (
     <Fragment>
       <div className="container">
-        <TopNavigation />
-        <ConfigNav />
-        <Equipment />
+        <CmmsNavigation />
+        <h4>It's CMMS Home</h4>
       </div>
     </Fragment>
   );

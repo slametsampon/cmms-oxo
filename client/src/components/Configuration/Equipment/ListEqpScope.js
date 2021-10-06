@@ -43,7 +43,7 @@ const ListEqpScopes = () => {
       <table className="table mt-5 text-center">
         <thead>
           <tr>
-            <th>Category</th>
+            <th>Scope</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>

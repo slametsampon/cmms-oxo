@@ -20,7 +20,7 @@ router.get("/", async function(req, res, next) {
 router.get("/", async (req, res) => {
   try {
     const { id } = req.params;
-    const eqpScope = await pool.query("SELECT scope FROM EqpScope");
+    const eqpScope = await pool.query("SELECT * FROM EqpScope");
 
     res.json(eqpScope.rows);
   } catch (err) {
