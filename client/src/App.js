@@ -2,16 +2,14 @@ import React, { Fragment } from "react";
 import "./App.css";
 
 //components
-
-import ListEqpCats from "./components/EqpCat/ListEqpCats";
-import InputEqpCat from "./components/EqpCat/InputEqpCat"
+import CmmsNavigation from "./components/layout/CmmsNavigation";
 
 function App() {
   return (
     <Fragment>
       <div className="container">
-        <InputEqpCat />
-        <ListEqpCats />
+        <CmmsNavigation />
+        <h4>It's CMMS Home</h4>
       </div>
     </Fragment>
   );
