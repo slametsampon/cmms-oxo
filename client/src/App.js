@@ -10,7 +10,7 @@ import {
 //componenets
 import ConfigNav from "./components/layout/ConfigNav";
 import EqpScope from "./components/Configuration/Equipment/EqpScope"
-import FromFile from "./components/Configuration/FromFile/FromFile";
+import ConfigItems from "./components/Configuration/FromFile/ConfigItems";
 
 function App() {
   return (
@@ -41,7 +41,7 @@ function App() {
                     <EqpScope />
                 </Route>
                 <Route exact path="/file">
-                    <FromFile />
+                    <ConfigItems />
                 </Route>
             </Switch>
         </Router>
